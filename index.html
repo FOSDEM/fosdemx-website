@@ -234,7 +234,7 @@
 
     <section id="location" style="padding: 0 !important;">
       <div class="row">
-        <div class="col-lg-3 text-center" style="padding-top:50px">
+        <div class="col-lg-4 text-center" style="padding-top:50px">
           <h2 class="section-heading text-uppercase">Location</h2>
           <div class="section-content">
               Université libre de Bruxelles<br>
@@ -244,10 +244,10 @@
               FORUM Auditarium
           </div>
           <div class="section-content">
-            <a class="btn btn-primary btn-xl text-uppercase" href="#">How to get there</a>
+            <a class="btn btn-primary btn-xl text-uppercase" data-toggle="modal" href="#location-modal">How to get there</a>
           </div>
         </div>
-        <div class="col-lg-9 text-center">
+        <div class="col-lg-8 text-center">
           <div id="locationmap" style="height: 400px; min-height: 400px; "></div>
         </div>
       </div>
@@ -353,7 +353,7 @@
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                   <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Register</button>
                 </div>
                 <div class="col-md-2"></div>
               </div>
@@ -427,8 +427,20 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+    // L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    // 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+    // });
 
-    L.marker([50.81963, 4.39920]).addTo(map)
+    L.marker([50.81942, 4.39900]).addTo(map)
+        .bindPopup('Forum E Room')
+        .openPopup();
+    L.marker([50.81942, 4.39907]).addTo(map)
+        .bindPopup('Forum F ROom')
+        .openPopup();
+    L.marker([50.81950, 4.39937]).addTo(map)
+        .bindPopup('OF Room')
+        .openPopup();
+
     </script>
 
     <!-- Bootstrap core JavaScript -->
@@ -444,6 +456,34 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
+
+    <div class="portfolio-modal modal fade" id="location-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2 class="text-uppercase">How to get there</h2>
+                  <h4 class="text-uppercase">By Bus</h2>
+                  <p>Take the 71 bus line until Fraiteur stop</p>
+                  <h4 class="text-uppercase">By Metro</h2>
+                  <p>Take the metro line 5 until Delta take the metro exit direction ULB campus</p>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
   </body>
 
