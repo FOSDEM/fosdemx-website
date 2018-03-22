@@ -31,6 +31,7 @@ h6 {
 
 section {
   padding: 50px 0;
+  background-color: whitesmoke;
 }
 
 section h2.section-heading {
@@ -153,13 +154,13 @@ img::-moz-selection {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     border: none;
-    background-color: transparent;
+    background-color: #212529;
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
@@ -181,41 +182,55 @@ img::-moz-selection {
   }
 }
 
+header.masthead:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  /*background-image: url("http://saltstack.com/wp-content/uploads/2013/06/isometricCubes_dark.jpg");*/
+  background-image: url("https://www.iconspng.com/images/prismatic-isometric-cube-wireframe-pattern/prismatic-isometric-cube-wireframe-pattern.jpg");
+  background-size:cover;
+  width: 100%;
+  height: 100vh;
+}
+
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  overflow: auto;
+  position: relative;
 }
 
+
 header.masthead .intro-text {
-  padding-top: 150px;
-  padding-bottom: 100px;
+  padding-top: 20vh;
+  padding-bottom: calc(45vh - 318px);
+  min-height: 650px;
+  margin-top: 50px;
 }
 
 header.masthead .intro-text .intro-lead-in {
   font-size: 22px;
   font-style: bold;
   line-height: 22px;
-  margin-bottom: 25px;
+  margin-bottom: 5vh;
   font-family: Signika,"DejaVu Sans",Arial,Helvetica,sans-serif;
 }
 
 header.masthead .intro-text .intro-lead-in .img-header {
-  height: 200px;
+  height: 20vh;
+  filter: brightness(0) invert(1);
+  min-height: 150px;
 }
 
 header.masthead .intro-text .intro-heading {
   font-size: 30px;
   font-weight: 700;
   line-height: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 5vh;
   font-family: Signika,"DejaVu Sans",Arial,Helvetica,sans-serif;
 }
 
@@ -223,27 +238,23 @@ header.masthead .intro-text .intro-location {
   font-size: 50px;
   font-weight: 200;
   line-height: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 5vh;
   font-family: Signika,"DejaVu Sans",Arial,Helvetica,sans-serif;
 }
 
 @media (min-width: 768px) {
-  header.masthead .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
-  }
   header.masthead .intro-text .intro-lead-in {
     font-size: 40px;
     font-style: italic;
     line-height: 40px;
-    margin-bottom: 25px;
+    margin-bottom: 5vh;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   header.masthead .intro-text .intro-heading {
     font-size: 75px;
     font-weight: 700;
     line-height: 75px;
-    margin-bottom: 50px;
+    margin-bottom: 5vh;
     font-family: Signika,"DejaVu Sans",Arial,Helvetica,sans-serif;
   }
 }
