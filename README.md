@@ -1,4 +1,4 @@
-# FOSDEMx Static page
+# fosdemx-website
 
 Static page used to display information for the FOSDEMx event.
 
