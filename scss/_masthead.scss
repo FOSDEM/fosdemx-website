@@ -19,8 +19,8 @@ header.masthead {
   color: white;
 
   .intro-text {
-    padding-top: 10vh;
-    padding-bottom: calc(45vh - 318px);
+    padding-top: 20vh;
+
     min-height: 650px;
     margin-top: 50px;
     .intro-lead-in {
@@ -52,14 +52,24 @@ header.masthead {
       font-size: 50px;
       font-weight: 200;
       line-height: 50px;
-      margin-bottom: 4vh;
+      margin-bottom: 5vh;
       @include heading-font;
+    }
+    .intro-slogan {
+      margin-bottom: 5vh;
     }
   }
 }
 
+.intro-date {
+  line-height: 30px;
+  font-size: 30px;
+  margin-bottom: 5vh;
+}
+
 @media(min-width:768px) {
   header.masthead {
+    min-height: calc(100vh - 50px);
     .intro-text {
       padding-top: 50px;
       padding-bottom: 100px;
@@ -73,7 +83,13 @@ header.masthead {
         font-size: 75px;
         font-weight: 700;
         line-height: 75px;
-        margin-bottom: 4vh;
+        @include heading-font;
+      }
+      .intro-slogan {
+        margin-bottom: 5vh;
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 50px;
         @include heading-font;
       }
       .intro-subheading {
