@@ -1,4 +1,28 @@
 <?php
+
+
+function register ($name, $email, $workshops) {
+    $body = "$name registered for a workshop:\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nWorkshops:\n".implode("\n", $workshops);
+    $headers = "From: fosdemx-registration@fosdem.org\nReply-To: $email";
+    mail(
+        'fosdemx-registration@fosdem.org',
+        "$name registered for a workshop",
+        $body,
+        $headers
+    );
+}
+
+function confirm($name, $email, $workshops) {
+    $body = "Confirmation of your registration:\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email\n\nWorkshops:\n".implode("\n", $workshops);
+    $headers = "From: no-reply@fosdem.org\nReply-To: fosdemx-registration@fosdem.org";
+    mail(
+        $email,
+        "Confirmation of your registration",
+        $body,
+        $headers
+    );
+}
+
 // Check for empty fields
 if(empty($_POST['name'])      ||
    empty($_POST['email'])     ||
@@ -18,10 +42,7 @@ foreach ($_POST['workshops'] as $raw_workshop) {
 
    
 // Create the email and send the message
-$to = 'registration-fosdemx@fosdem.org'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "$name registered for a workshop.";
-$email_body = "$name registered for a workshop:\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nWorkshops:\n".implode("\n", $workshops);
-$headers = "From: fosdemx@fosdem.org\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers .= "Reply-To: $email_address";   
-mail($to,$email_subject,$email_body,$headers);
-return true;         
+register($name, $email_address, $workshops);
+// Also mail a confirmation to the original sender
+confirm($name, $email_address, $workshops);
+return true;
