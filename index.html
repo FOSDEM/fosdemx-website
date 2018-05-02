@@ -17,7 +17,8 @@
             crossorigin="anonymous"></script>
     <script src="js/leaflet-src.js" integrity="sha256-RTChoCC1wuQGp8CspWGklot1/MimjntlaEIMAONjJ+0="
             crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script src="js/clappr.min.js" integrity="sha256-vKIsLHBwk6ssqmP3T57Fq0SowGVmXSig9+44i/EoBws="
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/leaflet.css" integrity="sha256-iYUgmrapfDGvBrePJPrMWQZDcObdAcStKBpjP3Az+3s="
           crossorigin="anonymous"/>
 
@@ -601,7 +602,7 @@
                 <div class="offset-lg-2" id="player">
                 </div>
             <script type="text/javascript">
-                let player = new Clappr.Player({source: "http://dev.lusis.eu/fosdemx.m3u8", parentId: "#player"});
+                let player = new Clappr.Player({source: "https://stream.fosdem.org/fosdemx.m3u8", parentId: "#player"});
             </script>
         </div>
     </div>
